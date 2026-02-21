@@ -1,0 +1,28 @@
+{
+  "company_name": "Nimbus Labs",
+  "industry": "healthtech",
+  "product_name": "Nimbus Care Ops",
+  "geography": "US",
+  "target_customers": "mid-size outpatient clinics",
+  "objectives": [
+    {
+      "title": "Reduce appointment leakage",
+      "metric": "-25% no-show rate in 2 quarters"
+    },
+    {
+      "title": "Improve staff productivity",
+      "metric": "+30% scheduling throughput"
+    }
+  ],
+  "stakeholders": [
+    {
+      "role": "VP Product",
+      "expectation": "Ship an MVP with measurable outcomes in under 16 weeks"
+    }
+  ],
+  "known_competitors": ["CareCloud", "SimplePractice"],
+  "constraints": [
+    "HIPAA compliance required",
+    "Launch budget capped at $250k"
+  ]
+}
