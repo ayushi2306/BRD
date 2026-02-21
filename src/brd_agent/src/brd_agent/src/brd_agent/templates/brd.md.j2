@@ -1,0 +1,89 @@
+# Business Requirements Document
+
+## 1. Executive Summary
+{{ executive_summary }}
+
+## 2. Business Context
+- **Company:** {{ request.company_name }}
+- **Product:** {{ request.product_name }}
+- **Industry:** {{ request.industry }}
+- **Geography:** {{ request.geography }}
+- **Target Customers:** {{ request.target_customers }}
+
+### Market Context
+{{ research.market_context }}
+
+## 3. Objectives & Success Metrics
+{% if request.objectives %}
+{% for objective in request.objectives -%}
+- **{{ objective.title }}** — {{ objective.metric }}
+{% endfor %}
+{% else %}
+- Define measurable product and business outcomes before delivery kickoff.
+{% endif %}
+
+## 4. Stakeholders
+{% if request.stakeholders %}
+{% for stakeholder in request.stakeholders -%}
+- **{{ stakeholder.role }}:** {{ stakeholder.expectation }}
+{% endfor %}
+{% else %}
+- Product, Engineering, Design, GTM, and Customer Success (to be detailed).
+{% endif %}
+
+## 5. User & Market Requirements
+{% for need in research.customer_needs -%}
+- {{ need }}
+{% endfor %}
+
+## 6. Competitive Intelligence
+{% if research.competitor_insights %}
+{% for competitor in research.competitor_insights -%}
+### {{ competitor.name }}
+- Positioning: {{ competitor.positioning }}
+- Strengths:
+{% for strength in competitor.likely_strengths -%}
+  - {{ strength }}
+{% endfor %}
+- Weaknesses:
+{% for weakness in competitor.likely_weaknesses -%}
+  - {{ weakness }}
+{% endfor %}
+{% endfor %}
+{% else %}
+- No explicit competitors provided. Add known alternatives during discovery.
+{% endif %}
+
+## 7. Scope
+### In Scope
+- Core capabilities needed to satisfy top customer needs.
+- Analytics instrumentation for objective tracking.
+
+### Out of Scope
+- Non-critical integrations that do not impact launch KPIs.
+- Expansion features not tied to current objective metrics.
+
+## 8. Constraints & Assumptions
+{% if request.constraints %}
+{% for constraint in request.constraints -%}
+- {{ constraint }}
+{% endfor %}
+{% else %}
+- Budget, compliance, and timeline assumptions to be confirmed.
+{% endif %}
+
+## 9. Risks & Mitigations
+{% for risk in research.risks -%}
+- **Risk:** {{ risk }}
+  - **Mitigation:** Assign owner, define weekly checkpoint, and track leading indicator.
+{% endfor %}
+
+## 10. Opportunities
+{% for item in research.opportunities -%}
+- {{ item }}
+{% endfor %}
+
+## 11. Open Questions
+- Which customer segment gets primary focus at launch?
+- Which metric is the single source of truth for success?
+- What dependencies could block the MVP release timeline?
